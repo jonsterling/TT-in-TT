@@ -58,7 +58,7 @@ data _≡Sub_ where
    -- equivalence closure
    refl  : ∀{Γ Δ}{γ : Sub Γ Δ} → γ ≡Sub γ
    sym   : ∀{Γ Δ}{γ γ' : Sub Γ Δ} → γ ≡Sub γ' → γ' ≡Sub γ
-   trans : ∀{Γ Δ}{γ γ' γ'' : Sub Γ Δ} → γ' ≡Sub γ'' → γ ≡Sub γ' → γ' ≡Sub γ''
+   trans : ∀{Γ Δ}{γ γ' γ'' : Sub Γ Δ} → γ' ≡Sub γ'' → γ ≡Sub γ' → γ ≡Sub γ''
 
 
 data _≡Tm_ where
