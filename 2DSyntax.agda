@@ -74,8 +74,8 @@ data _≡Tm_ where
    -- congruences
    _[_] : ∀{Γ Δ σ}{t t' : Tm Δ σ}{γ γ' : Sub Γ Δ} →
           t ≡Tm t' → (p : γ ≡Sub γ') → (t [ γ ]) < p > ≡Tm t' [ γ' ]
-   lam  : ∀{Γ σ τ}{t t' : Tm (Γ · σ) τ} → lam t ≡Tm lam t'
-   app  : ∀{Γ σ τ}{t t' : Tm Γ (Π σ τ)} → app t ≡Tm app t'
+   lam  : ∀{Γ σ τ}{t t' : Tm (Γ · σ) τ} → t ≡Tm t' → lam t ≡Tm lam t'
+   app  : ∀{Γ σ τ}{t t' : Tm Γ (Π σ τ)} → t ≡Tm t' → app t ≡Tm app t'
 
    -- equivalence closure
    refl  : ∀{Γ σ}{t : Tm Γ σ} → t ≡Tm t
